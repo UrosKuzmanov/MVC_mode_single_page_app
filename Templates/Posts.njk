@@ -1,0 +1,42 @@
+<section class="posts_wrapper">
+    
+    <header>
+        <h2>All Posts</h2>
+    </header>
+    <section class="post_content">
+        <div class="filter">
+            <h3>Filter:</h3>
+            <h4>Filter by date:</h4>
+            <label for="from_date">From:</label><br>
+            <input name="from_date" id="from_date" type="date"><br>
+            <label for="to_date">To:</label><br>
+            <input name="to_date" id="to_date" type="date">  
+            <br>
+        
+            <h4>Filter by category:</h4>
+                <select name="" id="category">
+                    <option value="0" disabled selected>--select country--</option>
+                    {% for category in categories %}
+                    <option value="{{category}}">{{category}}</option>
+                    {% endfor %}
+
+                </select>
+            
+            <button id="filter_btn">Filter</button>
+        </div>
+
+        <div class="posts">
+            
+            {% for post in posts %}
+
+            <div class="post">
+                <h3 class="titl">{{post.title}}</h3>
+                <img src="{{post.img}}" alt="">
+                <p class="country">{{post.publish_date}}</p>
+                <p class="country">{{post.country}}</p>
+                <p><a href="#posts/view/{{post.id}}">Details &gt;&gt;</a></p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</section>    

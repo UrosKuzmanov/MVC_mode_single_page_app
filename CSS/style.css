@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Baloo Da 2",serif;
+}
+
+.header{
+    width:100%;height: 60px;
+    background-color: #272727;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+
+}
+nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+
+}
+.logo{
+    margin-right: calc(10px + (20 - 10) * ((100vw - 320px) / (1600 - 320)));
+    animation-name: rotate_logo;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes rotate_logo {
+    0%{transform: rotateY(0deg);}
+    100%{transform: rotateY(360deg);}
+
+}
+nav a,.logo{
+    font-family:"Baloo Da 2",serif; 
+    font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1600 - 320)));
+    color: rgba(255, 255, 255, 0.871);
+
+}
+
+nav a{
+    
+    margin-left: calc(10px + (20 - 10) * ((100vw - 320px) / (1600 - 320)));
+    position: relative; 
+}
+
+nav a::before{
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(194, 146, 41);
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 0.5s;
+    transition-timing-function: ease-in-out;
+}
+nav a:hover::before{
+   width: 100%; 
+}
+.home{
+    max-width: 1024px;
+    margin: 0 auto;
+    
+}
+
+.home h1{
+    
+    font-family: "Baloo Da 2",serif;
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+.content{
+    position: absolute;
+    margin-top: 60px;
+    width: 100%;
+}
+.posts_wrapper, .galery_wrapper,.about_wrapper{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.posts_wrapper header,.galery_wrapper header,.about_wrapper header{
+    padding: 10px 10px;
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+.post_content, .galery_content{
+    display: flex;
+    width: 100%;
+    
+
+}
+.filter{
+    flex-basis: 20%;
+    padding:0  10px;
+    border-right: 1px solid rgb(192, 192, 192);
+}
+.posts{
+    padding: 0 10px;
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.filter,.posts{
+    margin-top: 30px;
+}
+.filter>h3{
+    margin: 0 0 20px;
+}
+.filter>h4{
+    margin: 10px 0 0;
+}
+#filter_btn{
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    border: none;
+    font-family: 'Josefin Slab', serif; 
+    cursor: pointer;
+}
+.post{
+    margin-bottom: 30px;
+}
+.post h3{
+    margin-bottom: 10px;
+
+}
+.post a{
+    color: blue;
+}
+img{
+    max-width: 100%;
+} 
+.galery_content{
+    flex-direction: column;
+    align-items: center;
+}
+.galery_content>div{
+    margin: 20px;
+}
+.galery_content a{
+    color: blue;
+}
+.single_post{
+    max-width: 1024px;
+    margin: 30px auto;
+    text-align: center;
+}

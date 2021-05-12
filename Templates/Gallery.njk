@@ -1,0 +1,14 @@
+<section class="galery_wrapper">
+    <header><h2>Galery</h2></header>
+    <div class="galery_content">
+        {% for img in gallery %}
+
+        <div>
+            <div><img src="{{img.img}}" alt=""></div>
+            <div><a href="#posts/view/{{img.id}}">{{img.country}}&gt;&gt;</a></div>
+        </div>
+
+
+        {% endfor %}
+    </div>
+</section>
